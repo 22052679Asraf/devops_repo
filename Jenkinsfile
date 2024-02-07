@@ -2,17 +2,17 @@
 pipeline {
       agent any
       stages {
-          stage('One') {
+          stage('ST1 5145881P') {
           steps {
             echo 'Continue from previous phase: Ready to deploy next environment.'
           }
           }
-          stage('Two') {
+          stage('ST2 5145881P') {
           steps {
             input('Do you want to update to UAT container?')
           }
           }
-          stage('Three') {
+          stage('ST3 5145881P') {
           when {
                 not {
                     branch "UAT container NOT updated"
@@ -31,13 +31,13 @@ pipeline {
                  echo "UAT container updated"
           }
           }
-          stage('Four') {
+          stage('ST4 5145881P') {
           steps {
             input('Do you want to deploy to Production container?')
                 
           }
           }
-          stage('Five') {
+          stage('ST5 5145881P') {
           when {
                 not {
                     branch "Production container NOT updated"
@@ -52,7 +52,7 @@ pipeline {
                  echo "Production container updated"
           }
           }
-          stage('Completed updating Operation') {
+          stage('ST6 5145881P') {
           steps {
             echo 'Completed updating to Production Container'
           }
